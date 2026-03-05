@@ -754,7 +754,7 @@ pub(super) async fn start_parachain<TPlat: PlatformRef>(
                     num_blocks,
                     request_headers,
                     request_bodies,
-                    ..
+                    request_justification,
                 },
             ) => {
                 let Some(sync) = &mut task.sync else {
@@ -791,7 +791,7 @@ pub(super) async fn start_parachain<TPlat: PlatformRef>(
                         num_blocks,
                         request_headers,
                         request_bodies,
-                        request_justification: false,
+                        request_justification,
                     },
                     abort,
                 );
